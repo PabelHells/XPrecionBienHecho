@@ -1,0 +1,10 @@
+
+body {
+    font-family: "Montserrat";
+    src: url(fronts/Montserrat-BlackItalic.ttf);
+}
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Citas de Rayos X</title>
+    
+    <!-- Importación de estilos -->
+    <link rel="stylesheet" href="citas.css">
+    <link rel="stylesheet" href="FrontsXPRECION.css">
+    <!-- Elimina uno de los siguientes si son redundantes -->
+    <!-- <link rel="stylesheet" href="XPRECION.CSS"> -->
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gestor de Citas de Rayos X</h1>
+        <ul id="appointmentList"></ul>
+        <a href="#" class="btn" onclick="showAddAppointmentScreen()">Agregar Cita</a>
+    </div>
+
+    <!-- Sección para agregar citas -->
+    <div id="addAppointmentScreen" class="container" style="display: none;">
+        <h2>Agregar Cita</h2>
+        <form id="appointmentForm">
+            <label for="patientName">Nombre del Paciente:</label><br>
+            <input type="text" id="patientName" name="patientName" required><br>
+            <label for="date">Fecha de la Cita:</label><br>
+            <input type="date" id="date" name="date" required><br>
+            <label for="doctorName">Nombre del Médico:</label><br>
+            <input type="text" id="doctorName" name="doctorName" required><br>
+            <label for="notes">Notas:</label><br>
+            <textarea id="notes" name="notes"></textarea><br>
+            <input type="submit" value="Guardar Cita">
+        </form>
+    </div>
+
+    <!-- Sección para mostrar detalles de la cita -->
+    <div id="appointmentDetailsScreen" class="container" style="display: none;">
+        <h2>Detalles de la Cita</h2>
+        <p id="patientNameDetail"></p>
+        <p id="dateDetail"></p>
+        <p id="doctorNameDetail"></p>
+        <p id="notesDetail"></p>
+        <a href="#" class="btn" onclick="hideAppointmentDetails()">Volver</a>
+    </div>
+
+    <script>
+        // Arreglo para almacenar las citas
+        var appointments = [];
+
+        // Mostrar pantalla para agregar cita
+        function showAddAppointmentScreen() {
+            document.getElementById("addAppointmentScreen").style.display = "block";
+            document.getElementById("appointmentDetailsScreen").style.display = "none";
+        }
+
+        // Guardar cita
+        document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Evitar el envío del formulario
+
+            // Obtener valores del formulario
+            var patientName = document.getElementById("patientName").value;
+            var date = document.getElementById("date").value;
+            var doctorName = document.getElementById("doctorName").value;
+            var notes = document.getElementById("notes").value;
+
+            // Guardar cita en el arreglo
+            appointments.push({ patientName: patientName, date: date, doctorName: doctorName, notes: notes });
+
+            // Actualizar la lista de citas
+            updateAppointmentList();
+
+            // Ocultar la pantalla de agregar citas y limpiar el formulario
+            document.getElementById("addAppointmentScreen").style.display = "none";
+            document.getElementById("appointmentForm").reset();
+        });
+
+        // Actualizar la lista de citas en pantalla
+        function updateAppointmentList() {
+            var appointmentList = document.getElementById("appointmentList");
+            appointmentList.innerHTML = "";  // Limpiar lista
+
+            appointments.forEach(function(appointment, index) {
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(appointment.patientName));
+                li.onclick = function() {
+                    showAppointmentDetails(index);
+                };
+                appointmentList.appendChild(li);
+            });
+        }
+
+        // Mostrar detalles de la cita
+        function showAppointmentDetails(index) {
+            var appointment = appointments[index];
+            document.getElementById("patientNameDetail").innerHTML = "Paciente: " + appointment.patientName;
+            document.getElementById("dateDetail").innerHTML = "Fecha: " + appointment.date;
+            document.getElementById("doctorNameDetail").innerHTML = "Médico: " + appointment.doctorName;
+            document.getElementById("notesDetail").innerHTML = "Notas: " + appointment.notes;
+
+            document.getElementById("appointmentDetailsScreen").style.display = "block";
+            document.getElementById("addAppointmentScreen").style.display = "none";
+        }
+
+        // Ocultar los detalles de la cita
+        function hideAppointmentDetails() {
+            document.getElementById("appointmentDetailsScreen").style.display = "none";
+        }
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        flatpickr("#date", {
+            dateFormat: "Y-m-d",  // Formato de fecha (ej: 2024-12-31)
+            altInput: true,       // Campo alternativo para visualización más amigable
+            altFormat: "F j, Y",  // Formato de visualización (ej: December 31, 2024)
+            defaultDate: new Date(),  // Establecer la fecha de hoy como predeterminada
+            locale: {
+                firstDayOfWeek: 1  // Establecer que la semana comience en lunes
+            }
+        });
+    });
+</script>
+</body>
+</html>

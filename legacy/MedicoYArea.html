@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro de Área</title>
+    <link rel="stylesheet" href="MedicoYArea.css">
+</head>
+<body>
+    <a href="index.html" class="back-button">Volver a la Página Principal</a>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <h2>Formulario de Registro de Área</h2>
+    <form action="php/Area.php" method="POST">
+        <!-- Campo para el nombre del área -->
+        <label for="area">Área:</label>
+        <input type="text" id="area" name="area" maxlength="30" required>
+        <br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+    <h2>Formulario de Registro de Área</h2>
+    <form action="php/Medico.php" method="POST">
+        <!-- Campo para el nombre del área -->
+        <label for="nombre">Nombre del medico:</label>
+        <input type="text" id="nombre" name="nombre" maxlength="50" required>
+        <br><br>
+
+        <label for="Areas">Selecciona una area:</label>
+        <select id="Areas" name="Areas">
+            <option value="4">Tomografía Axial Multicorte</option>
+            <option value="5">Angiotomografía</option>
+            <option value="6">Ultrasonidos</option>
+            <option value="7">Elastografía hepática</option>
+            <option value="8">Musculoesquelético</option>
+            <option value="9">Biopsias</option>
+            <option value="10">Rayos X</option>
+            <option value="11">Estudios contrastados</option>
+        </select>
+        <br><br>
+
+    <button type="submit">Guardar</button>
+</form>
+</html>

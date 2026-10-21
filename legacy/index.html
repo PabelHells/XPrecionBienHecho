@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XPRECION - Centro Médico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+</head>
+<body style="font-family: 'Roboto', sans-serif; line-height: 1.6;">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="logo.jpg" alt="XPRECION Logo" style="width: 40px; height: auto;" class="d-inline-block align-text-top">
+                    XPRECION
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item menu-active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item about">
+                            <a class="nav-link" href="about.html">Acerca de XPRECION</a>
+                        </li>
+                        <li class="nav-item services">
+                            <a class="nav-link" href="servicios.html">Registro</a>
+                        </li>
+                        <li class="nav-item schedule">
+                            <a class="nav-link" href="xpre.html">Horario</a>
+                        </li>
+                        <li class="nav-item appointment">
+                            <a class="nav-link" href="citas.html">Agenda una cita</a>
+                        </li>
+                        <li class="nav-item appointment">
+                            <a class="nav-link" href="AgregarRayosX.html">Servicios</a>
+                    </ul>
+                    <div class="d-flex">
+                        <a href="register.html" class="btn btn-outline-primary me-2">Registrar Usuario</a>
+                        <a href="login.html" class="btn btn-outline-secondary">Iniciar Sesión</a>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-5">
+        <section class="card">
+            <div class="card-body">
+                <h2 class="card-title">Bienvenido a XPRECION</h2>
+                <p class="card-text">Centro Médico especializado en brindar servicios de salud de alta calidad.</p>
+                <img src="logo.jpg" alt="XPRECION Logo" class="img-fluid">
+            </div>
+        </section>
+    </main>
+    <div id="quejas-widget">
+        <div class="widget-header">
+            <h5>Buzón de Quejas</h5>
+            <button class="close-widget" onclick="toggleWidget()">×</button>
+        </div>
+        <form action="indexform.php" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="name" name="name" required placeholder="Tu nombre">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico:</label>
+                <input type="email" class="form-control" id="email" name="email" required placeholder="ejemplo@correo.com">
+            </div>
+            <div class="mb-3">
+                <label for="complaint" class="form-label">Queja o Sugerencia:</label>
+                <textarea class="form-control" id="complaint" name="complaint" rows="5" required placeholder="Escribe tu queja o sugerencia"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Queja</button>
+        </form>
+    </div>
+    <button id="open-widget-btn" onclick="toggleWidget()">
+        <i class="fa-solid fa-comments"></i>
+    </button>
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4">
+                    <h5 class="text-uppercase">XPRECION - Centro Médico</h5>
+                    <p>Contáctanos para más información sobre nuestros servicios o para programar una consulta.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="about.html" class="text-dark">Acerca de</a></li>
+                        <li><a href="servicios.html" class="text-dark">Servicios</a></li>
+                        <li><a href="citas.html" class="text-dark">Citas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase">Síguenos</h5>
+                    <a href="#" class="me-4 text-reset"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-4 text-reset"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-4 text-reset"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleWidget() {
+            var widget = document.getElementById('quejas-widget');
+            var display = window.getComputedStyle(widget).display;
+            if (display === "none") {
+                widget.style.display = "block";
+            } else {
+                widget.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>     

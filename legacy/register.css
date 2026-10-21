@@ -1,0 +1,45 @@
+body {
+    background-color: #f8f9fa; /* Color de fondo suave */
+    font-family: 'Roboto', sans-serif; /* Tipografía moderna */
+}
+
+.register-container {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: auto; /* Centramos el formulario en la página */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: white; /* Fondo blanco para el formulario */
+}
+
+.card-title {
+    font-weight: 700; /* Negrita para el título */
+    color: #007bff; /* Color de texto azul */
+}
+
+.form-label {
+    font-weight: 600; /* Negrita para etiquetas */
+}
+
+input.form-control {
+    border: 1px solid #ced4da; /* Bordes grises suaves */
+    border-radius: 5px; /* Bordes redondeados para los inputs */
+    transition: border-color 0.3s; /* Transición suave */
+}
+
+input.form-control:focus {
+    border-color: #007bff; /* Bordes azules al enfocarse */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra de enfoque */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Color de fondo del botón */
+    border-color: #007bff; /* Color del borde del botón */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+    border-color: #0056b3; /* Color del borde al pasar el mouse */
+}
+
+.mt-3.text-center {
+    margin-top: 1rem; /* Margen superior para el enlace de inicio de sesión */
+}

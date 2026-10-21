@@ -1,0 +1,35 @@
+
+
+h1, h2 {
+  color: #333; /* Color oscuro para los títulos principales */
+}
+
+label {
+  color: #555; /* Color gris para las etiquetas de los campos */
+}
+
+input[type="text"], input[type="date"], input[type="submit"], textarea, .btn {
+  color: #444; /* Color oscuro para el texto en campos de entrada y botones */
+}
+
+ul, li {
+  color: #666; /* Color gris medio para la lista de citas */
+}
+
+a {
+  color: #f6f9fd; /* Color azul para los enlaces */
+}
+
+a:hover {
+  color: #ffffff; /* Color azul más oscuro al pasar el cursor sobre los enlaces */
+}
+
+
+ul {
+    color: orchid;
+  }
+    
+h1 {
+  color: crimson;
+}
+  

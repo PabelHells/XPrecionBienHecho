@@ -1,0 +1,85 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Cambiado a auto para permitir el scroll */
+    margin: 0;
+    background-color: #e0f7fa;
+}
+
+/* Estilo para el botón de volver */
+.back-button {
+    position: absolute; /* Permite que se posicione fuera del flujo normal */
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #00838f;
+    color: white;
+    text-decoration: none; /* Quitar el subrayado */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #004d40; /* Color al pasar el ratón */
+}
+
+/* Resto de los estilos siguen siendo los mismos... */
+h2 {
+    text-align: center;
+    font-size: 26px;
+    color: #006064;
+    margin: 0 0 25px;
+}
+
+/* Estilo para los formularios */
+form {
+    border: 2px solid #00838f;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 131, 143, 0.2);
+    max-width: 550px;
+    width: 90%;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* Estilo para las etiquetas */
+label {
+    font-weight: bold;
+    color: #004d40;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Estilo para los campos de entrada */
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #004d40;
+    border-radius: 4px;
+}
+
+/* Estilo para el botón */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004d40;
+}
