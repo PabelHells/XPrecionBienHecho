@@ -1,6 +1,6 @@
-# XPRECION · Web, Android e iOS
+# XPRECION · 
 
-Reconstrucción de `PabelHells/Xprecion2.0` con React, TypeScript, Vite, Capacitor y Supabase. La web y los proyectos móviles comparten interfaz y reglas de negocio. No requiere PHP ni MySQL para la nueva aplicación.
+Reconstrucción de `Xprecion2.0` con React, TypeScript, Vite, Capacitor y Supabase. La web y los proyectos móviles comparten interfaz y reglas de negocio. No requiere PHP ni MySQL para la nueva aplicación.
 
 **Estado de entrega:** aplicación y proyectos nativos implementados; compilación web y reglas de PostgreSQL verificadas localmente. Falta conectar un proyecto real de Supabase, configurar la clínica, publicar la web y compilar/firmar las aplicaciones móviles. No contiene credenciales, pacientes, médicos ni citas reales. No se ha migrado ninguna base de datos anterior.
 
